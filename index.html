@@ -17,12 +17,18 @@
 </div>
 
 <script>
-document.getElementById("startBtn").addEventListener("click", () => {
+document.getElementById("startBtn").addEventListener("click", async () => {
+
     sessionStorage.setItem("playAudio", "yes");
+    try {
+        const audio = document.getElementById("bgm");
+        await audio.play();
+    } catch (e) {
+        console.log("Play blocked, Safari will retry on next page.");
+    }
     window.location.href = "jigglypuff.html";
 });
 </script>
-
 
 </body>
 </html>
