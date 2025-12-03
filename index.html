@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>jiggggly</title>
+    <title>jiggly intro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
 <audio id="bgm" src="wannadance.mp3" loop></audio>
 
 <div class="container">
@@ -19,15 +20,14 @@
     const bgm = document.getElementById("bgm");
 
     document.getElementById("startBtn").addEventListener("click", async () => {
-        try {
-            // REQUIRED by iPhone. play() must occur BEFORE page change.
-            await bgm.play();
-        } catch (e) {
-            console.log("Audio play error:", e);
-        }
+
+        // Try to play immediately (works on iPhone)
+        try { await bgm.play(); } catch(e) {}
+
+        // Redirect after 300ms (iPhone requires delay)
         setTimeout(() => {
             window.location.href = "jigglypuff.html";
-        }, 400);
+        }, 300);
     });
 </script>
 
