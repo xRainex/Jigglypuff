@@ -7,6 +7,7 @@
 </head>
 
 <body>
+<audio id="bgm" src="wannadance.mp3" loop></audio>
 
 <div class="container">
     <button id="startBtn" class="jiggly-button">
@@ -15,8 +16,18 @@
 </div>
 
 <script>
-    document.getElementById("startBtn").addEventListener("click", () => {
-        window.location.href = "jigglypuff.html";
+    const bgm = document.getElementById("bgm");
+
+    document.getElementById("startBtn").addEventListener("click", async () => {
+        try {
+            // REQUIRED by iPhone. play() must occur BEFORE page change.
+            await bgm.play();
+        } catch (e) {
+            console.log("Audio play error:", e);
+        }
+        setTimeout(() => {
+            window.location.href = "jigglypuff.html";
+        }, 400);
     });
 </script>
 
