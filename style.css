@@ -14,7 +14,7 @@ body {
 }
 
 .sprite {
-    width: 350px;
+    width: 500px;
     image-rendering: pixelated; 
     transition: transform 0.1s;
 }
@@ -114,4 +114,5 @@ body {
         opacity: 0;
     }
 }
+
 
