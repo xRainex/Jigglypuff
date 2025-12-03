@@ -1,0 +1,117 @@
+body {
+    background: #ffc4ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.jiggly-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sprite {
+    width: 350px;
+    image-rendering: pixelated; 
+    transition: transform 0.1s;
+}
+
+#bubble-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.bubble {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 50%;
+    filter: blur(2px);
+    opacity: 0;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #ffd6f6, #ffeaff, #ffccf9);
+    font-family: "Comic Sans MS", "Poppins", sans-serif;
+    text-align: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title {
+    font-size: 48px;
+    color: #ff69b4;
+    margin-bottom: 5px;
+    text-shadow: 2px 2px 5px rgba(255, 0, 200, 0.25);
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #b84aa8;
+    margin-bottom: 40px;
+}
+
+.jiggly-button {
+    font-size: 28px;
+    padding: 20px 40px;
+    background: #ff99dd;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(255, 0, 200, 0.5);
+    transition: transform 0.2s, background 0.3s;
+}
+
+.jiggly-button:hover {
+    background: #ff77cc;
+    transform: scale(1.1);
+}
+
+.jiggly-button:active {
+    transform: scale(0.95);
+}
+ 
+
+@keyframes Right {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    15% { opacity: 0.9; }
+    100% {
+        transform: translateX(120vw);
+        opacity: 0;
+    }
+}
+
+
+@keyframes Left {
+    0% {
+        transform: translateX(0);
+        opacity: 0;
+    }
+    15% { opacity: 0.9; }
+    100% {
+        transform: translateX(-120vw);
+        opacity: 0;
+    }
+}
+
