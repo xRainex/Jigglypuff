@@ -17,19 +17,12 @@
 </div>
 
 <script>
-    const bgm = document.getElementById("bgm");
-
-    document.getElementById("startBtn").addEventListener("click", async () => {
-
-        // Try to play immediately (works on iPhone)
-        try { await bgm.play(); } catch(e) {}
-
-        // Redirect after 300ms (iPhone requires delay)
-        setTimeout(() => {
-            window.location.href = "jigglypuff.html";
-        }, 300);
-    });
+document.getElementById("startBtn").addEventListener("click", () => {
+    sessionStorage.setItem("playAudio", "yes");
+    window.location.href = "jigglypuff.html";
+});
 </script>
+
 
 </body>
 </html>
